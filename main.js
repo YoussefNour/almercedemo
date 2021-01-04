@@ -15,7 +15,11 @@ app.post("/",(req,res)=>{
     return res.send({pass:true,reply});
 });
 
-server.listen(port,()=>console.log(`server initiated on port ${port}`));
+
+var port_number = server.listen(process.env.PORT || 3000);
+app.listen(port_number);
+
+//server.listen(port,()=>console.log(`server initiated on port ${port}`));
 
 
 
