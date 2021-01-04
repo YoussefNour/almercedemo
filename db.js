@@ -33,7 +33,7 @@ const getData = (res) => {
     fs.writeFile('./data.json', results, 'utf8',(err,data)=>{
       console.log(err)
     });
-    return res.json(results);
+    return res.send("good");
 })
 .catch(err => {
     console.log(err);
