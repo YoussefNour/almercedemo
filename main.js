@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const answerOperation = require("./db");
+const answerOperations = require("./db");
 const bodyparser = require("body-parser");
 const cors = require("cors");
 const http = require("http");
@@ -11,21 +11,18 @@ app.use(cors());
 app.use(express.static("public"));
 
 app.post("/addAnswer", (req, res) => {
-  answerOperation.addAnswer(req.body, res);
+  //answerOperation.addAnswer(req.body, res);
+  console.log(req.body)
+  answerOperations.sendData(req.body);
   return res.send({pass:true}); 
 });
 
-app.post("/demoAnswer", (req, res) => {
-  answerOperation.demoAnswer(req.body, res);
-});
 
 app.get("/getAnswers", (req, res) => {
-  answerOperation.getAnswers(res);
+  answerOperations.getData(res);
 });
 
-app.post("/getOneAnswer", (req, res) => {
-  answerOperation.getOneAnswer(req.body, res);
-});
+
 
 var port_number = server.listen(process.env.PORT || 3000);
 app.listen(port_number);
