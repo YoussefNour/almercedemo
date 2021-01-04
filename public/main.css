@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.mainbody {
+  background: #efefef none repeat scroll 0 0;
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 3% 0 3% 0;
+  padding-top: 40px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: start;
+}
+
+.infobar {
+  position: fixed;
+  width: 100%;
+  height: 8%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: rgb(18, 140, 126);
+  padding: 5px;
+  align-items: center;
+  color: aliceblue;
+  z-index: 99;
+}
+.profileimage {
+  width: 4%;
+  border-radius: 50%;
+  margin-right: 2%;
+}
+
+.filler {
+  display: flex;
+  height: 10%;
+  padding: 5px;
+  z-index: -1;
+  color: aliceblue;
+}
+
+.controls {
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  width: 100%;
+  height: 5%;
+  padding: 10px;
+  background-color: rgb(18, 140, 126);
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  color: aliceblue;
+  z-index: 99;
+}
+
+@media only screen and (max-width:600px){
+  .controls {
+    height: 9%;
+  }
+}
+
+
+.outputmessage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  width: fit-content;
+  height: fit-content;
+  background-color: #34b7f1;
+  padding: 10px;
+  margin: 15px;
+  border-radius: 10px;
+  color: aliceblue;
+}
+
+.messageprofile {
+  width: 2em;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.inputmessage {
+  position: relative;
+  align-self: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #25d366;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
+  margin: 15px;
+  border-radius: 10px;
+  color: aliceblue;
+}
+
+.sendbutton {
+  display: flex;
+  border-radius: 50%;
+  border-style: none;
+  padding: 5px;
+  margin-right: 1%;
+  vertical-align: middle;
+  outline: none;
+}
+
+.sendbutton:hover {
+  outline: none;
+  background-color: silver;
+}
+
+.sendbutton:active {
+  outline: none;
+  background-color: gainsboro;
+}
+
+.messageinput {
+  border-radius: 20px;
+  width: 75%;
+  border: none;
+  outline: none;
+  padding: 5px;
+}

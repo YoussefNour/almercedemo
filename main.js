@@ -3,11 +3,12 @@ const app = express();
 const bodyparser = require('body-parser');
 const cors = require('cors');
 const http = require('http');
-const server = http.createServer(app);
+//const server = http.createServer(app);
 const port = 3000;
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:true}));
 app.use(cors());
+app.use(express.static("public"));
 
 app.post("/",(req,res)=>{
     const { questionIndex, reply } = req.body;
@@ -16,24 +17,5 @@ app.post("/",(req,res)=>{
 });
 
 
-var port_number = server.listen(process.env.PORT || 3000);
-app.listen(port_number);
-
-//server.listen(port,()=>console.log(`server initiated on port ${port}`));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+app.listen(port, 
+	() => console.log("Server is running..."));
