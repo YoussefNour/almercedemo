@@ -30,7 +30,7 @@ const receivemessage = () => {
     texts.innerHTML += inputmessage(input);
     $.ajax({
       type: "POST",
-      url: "http://localhost:3000",
+      url: "https://almerce-demo.herokuapp.com",
       data: {
         questionIndex: questionIndex,
         reply: input,
