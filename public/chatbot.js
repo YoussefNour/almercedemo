@@ -47,9 +47,9 @@ const receivemessage = () => {
         age:answers[1],
         gender:answers[2],
         skills:answers[3],
-        material:answers[4],
-        category:answers[5],
-        montesory:answers[6],
+        category:answers[4],
+        montesory:answers[5],
+        material:answers[6],
         price:answers[7]
       },
       success: (res) => {
