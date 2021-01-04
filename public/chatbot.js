@@ -40,8 +40,8 @@ const receivemessage = () => {
     console.log("sending data");
     $.ajax({
       type: "POST",
-      //url: "http://localhost:3000/addAnswer",
-      url: "https://almerce-demo.herokuapp.com/addAnswer",
+      url: "http://localhost:3000/addAnswer",
+      //url: "https://almerce-demo.herokuapp.com/addAnswer",
       data: {
         name:answers[0],
         age:answers[1],
@@ -54,7 +54,7 @@ const receivemessage = () => {
       },
       success: (res) => {
         if(res.pass){
-          console.log(data);
+          console.log("success");
         } else {
           alert("Error your message was not sent");
         }
