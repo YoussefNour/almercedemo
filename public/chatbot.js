@@ -1,4 +1,5 @@
 var questionIndex = 0;
+var answers = [];
 const questions = [
   "مساء الخير يا فندم اخبارك ايه اتشرف بالاسم",
   "ممكن اعرف سن الطفل اللي هيلعب باللعبة ؟",
@@ -25,20 +26,35 @@ const sendmessage = () => {
 
 const receivemessage = () => {
   let input = document.getElementById("message").value;
+  answers.push(input);
   if (input != "" && questionIndex < questions.length) {
     let texts = document.getElementById("chat");
     texts.innerHTML += inputmessage(input);
+    sendmessage(texts, questionIndex);
+    document.getElementById("message").value = "";
+    console.log(answers);
+    console.log(questionIndex);
+    console.log(questions.length);
+  }
+  if(questionIndex === questions.length){
+    console.log("sending data");
     $.ajax({
       type: "POST",
-      url: "https://almerce-demo.herokuapp.com",
+      //url: "http://localhost:3000/addAnswer",
+      url: "https://almerce-demo.herokuapp.com/addAnswer",
       data: {
-        questionIndex: questionIndex,
-        reply: input,
+        name:answers[0],
+        age:answers[1],
+        gender:answers[2],
+        skills:answers[3],
+        material:answers[4],
+        category:answers[5],
+        montesory:answers[6],
+        price:answers[7]
       },
       success: (res) => {
         if(res.pass){
-          sendmessage(texts, questionIndex);
-          document.getElementById("message").value = "";
+          console.log(data);
         } else {
           alert("Error your message was not sent");
         }
