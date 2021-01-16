@@ -67,14 +67,14 @@ const receivemessage = () => {
 const outputmessage = () => {
   return `<div class="outputmessage">
         <img class="messageprofile" src="/images/robot.jpg">
-        <label>${questions[questionIndex++]}</label>
+        <label class="messagetext">${questions[questionIndex++]}</label>
     </div>`;
 };
 
 const inputmessage = (userMessage) => {
   return `<div class="inputmessage">
     <img class="messageprofile" src="/images/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg">
-    <label>${userMessage}</label>
+    <label class="messagetext">${userMessage}</label>
     </div>`;
 };
 
