@@ -79,6 +79,8 @@ body {
   align-self: flex-start;
   width: fit-content;
   height: fit-content;
+  flex-shrink: none;
+  max-height: 30px;
   background-color: #34b7f1;
   padding: 10px;
   margin: 15px;
@@ -101,6 +103,8 @@ body {
   background-color: #25d366;
   width: fit-content;
   height: fit-content;
+  flex-shrink: none;
+  max-height: 30px;
   padding: 10px;
   margin: 15px;
   border-radius: 10px;
@@ -110,11 +114,11 @@ body {
 .sendbutton {
   display: flex;
   border-radius: 50%;
-  border-style: none;
+  border: grey inset 1px;
   padding: 5px;
   margin: 0 2% 0 1%;
   vertical-align: middle;
-  outline: none;
+  background-color: aliceblue;
 }
 
 .sendbutton:hover {
@@ -130,32 +134,15 @@ body {
 .messageinput {
   border-radius: 20px;
   width: 75%;
+  height: fit-content;
   border: none;
   outline: none;
   padding: 5px;
+  font-size: 16px;
 }
 
 @media only screen and (max-width: 600px) {
   .controls {
     height: 25px;
-  }
-
-  input[type="color"],
-  input[type="date"],
-  input[type="datetime"],
-  input[type="datetime-local"],
-  input[type="email"],
-  input[type="month"],
-  input[type="number"],
-  input[type="password"],
-  input[type="search"],
-  input[type="tel"],
-  input[type="text"],
-  input[type="time"],
-  input[type="url"],
-  input[type="week"],
-  select:focus,
-  textarea {
-    font-size: 16px;
   }
 }
