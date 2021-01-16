@@ -3,6 +3,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  background-color: #efefef;
 }
 
 .mainbody {
@@ -53,27 +54,23 @@ body {
   height: 5%;
   padding: 10px;
   background-color: rgb(18, 140, 126);
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   vertical-align: middle;
   color: aliceblue;
   z-index: 99;
 }
 
-#maincontainer{
+#maincontainer {
   overflow-y: auto;
   max-height: 100%;
   margin: 0;
   padding: 0;
   max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: initial;
 }
-
-@media only screen and (max-width:600px){
-  .controls {
-    height: 9%;
-  }
-}
-
 
 .outputmessage {
   position: relative;
@@ -115,7 +112,7 @@ body {
   border-radius: 50%;
   border-style: none;
   padding: 5px;
-  margin-right: 1%;
+  margin: 0 2% 0 1%;
   vertical-align: middle;
   outline: none;
 }
@@ -136,4 +133,29 @@ body {
   border: none;
   outline: none;
   padding: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  .controls {
+    height: 25px;
+  }
+
+  input[type="color"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="email"],
+  input[type="month"],
+  input[type="number"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="time"],
+  input[type="url"],
+  input[type="week"],
+  select:focus,
+  textarea {
+    font-size: 16px;
+  }
 }
