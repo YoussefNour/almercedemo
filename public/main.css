@@ -15,7 +15,6 @@ body {
   margin: 10vh 0 5vh 0;
   overflow-y: auto;
   overflow-x: hidden;
-  text-align: start;
 }
 
 .infobar {
@@ -31,6 +30,7 @@ body {
   color: aliceblue;
   z-index: 99;
 }
+
 .profileimage {
   width: 4%;
   border-radius: 50%;
@@ -50,17 +50,6 @@ body {
   vertical-align: middle;
   color: aliceblue;
   z-index: 99;
-}
-
-#maincontainer {
-  overflow-y: auto;
-  max-height: 100%;
-  margin: 0;
-  padding: 0;
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-shrink: initial;
 }
 
 .outputmessage {
@@ -136,28 +125,27 @@ body {
   font-size: 16px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
+  .mainbody {
+    overflow: auto;
+    text-align: justify;
+  }
+
   .controls {
     height: 25px;
   }
 
   .outputmessage {
-    max-width: 60%;
-    max-height: 50px;
+    max-width: 70%;
     padding: 5px;
     margin: 10px;
-  }
-
-  .messageprofile {
-    width: 2em;
-    border-radius: 50%;
-    margin-right: 5px;
+    min-height: fit-content;
   }
 
   .inputmessage {
-    max-width: 80%;
-    max-height: 50px;
+    max-width: 70%;
     padding: 5px;
     margin: 10px;
+    min-height: fit-content;
   }
 }
