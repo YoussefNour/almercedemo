@@ -12,7 +12,7 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin: 9vh 0 13vh 0;
+  margin: 10vh 0 5vh 0;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -20,7 +20,7 @@ body {
 .infobar {
   position: fixed;
   width: 100%;
-  height: 6vh;
+  height: 9vh;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -126,6 +126,11 @@ body {
 }
 
 @media only screen and (max-width: 700px) {
+  .mainbody {
+    overflow: auto;
+    text-align: justify;
+  }
+
   .controls {
     height: 25px;
   }
