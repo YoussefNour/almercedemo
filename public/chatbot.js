@@ -9,7 +9,7 @@ const questions = [
   "حضرتك تحب تكون اللعبه بنظام التعليم مونتيسوري ؟",
   "هل تشطرت الخامة بتاعة اللعبة تكون ضد الكسر ؟",
   "تحب ادورلك في الاسعار من كام لكام ؟",
-  "شكرا لوقتك انتهت الأسألة ممكن تزور موقع الصفوة لو نفسك فى لعبة لطفلك"
+  "شكرا لوقتك انتهت الأسألة ممكن تزور موقع الصفوة لو نفسك فى لعبة لطفلك",
 ];
 
 const sendmessage = () => {
@@ -18,9 +18,9 @@ const sendmessage = () => {
     texts.innerHTML += outputmessage();
   }
   scrollToBottom("chat");
-  if(questionIndex >= questions.length){
-    $("#message").css("display","none");
-    $("#sendbutton").css("display","none");
+  if (questionIndex >= questions.length) {
+    $("#message").css("display", "none");
+    $("#sendbutton").css("display", "none");
   }
 };
 
@@ -36,24 +36,24 @@ const receivemessage = () => {
     console.log(questionIndex);
     console.log(questions.length);
   }
-  if(questionIndex === questions.length){
+  if (questionIndex === questions.length) {
     console.log("sending data");
     $.ajax({
       type: "POST",
       url: "http://localhost:3000/addAnswer",
       //url: "https://almerce-demo.herokuapp.com/addAnswer",
       data: {
-        name:answers[0],
-        age:answers[1],
-        gender:answers[2],
-        skills:answers[3],
-        category:answers[4],
-        montesory:answers[5],
-        material:answers[6],
-        price:answers[7]
+        name: answers[0],
+        age: answers[1],
+        gender: answers[2],
+        skills: answers[3],
+        category: answers[4],
+        montesory: answers[5],
+        material: answers[6],
+        price: answers[7],
       },
       success: (res) => {
-        if(res.pass){
+        if (res.pass) {
           console.log("success");
         } else {
           alert("Error your message was not sent");
@@ -80,7 +80,7 @@ const inputmessage = (userMessage) => {
 
 function scrollToBottom(id) {
   var div = document.getElementById(id);
-  div.scrollTop = div.scrollHeight - div.clientHeight;
+  div.scrollTop = div.scrollHeight;
 }
 
 // Make sure this code gets executed after the DOM is loaded.
