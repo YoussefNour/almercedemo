@@ -9,7 +9,7 @@ const questions = [
   "حضرتك تحب تكون اللعبه بنظام التعليم مونتيسوري ؟",
   "هل تشطرت الخامة بتاعة اللعبة تكون ضد الكسر ؟",
   "تحب ادورلك في الاسعار من كام لكام ؟",
-  "شكرا لوقتك انتهت الأسألة ممكن تزور موقع الصفوة لو نفسك فى لعبة لطفلك",
+  "شكرا لوقتك انتهت الأسألة",
 ];
 
 const sendmessage = () => {
@@ -30,6 +30,7 @@ const receivemessage = () => {
   if (input != "" && questionIndex < questions.length) {
     let texts = document.getElementById("chat");
     texts.innerHTML += inputmessage(input);
+    scrollToBottom("chat");
     sendmessage(texts, questionIndex);
     document.getElementById("message").value = "";
     console.log(answers);
@@ -40,8 +41,8 @@ const receivemessage = () => {
     console.log("sending data");
     $.ajax({
       type: "POST",
-      url: "http://localhost:3000/addAnswer",
-      //url: "https://almerce-demo.herokuapp.com/addAnswer",
+      //url: "http://localhost:3000/addAnswer",
+      url: "https://almerce-demo.herokuapp.com/addAnswer",
       data: {
         name: answers[0],
         age: answers[1],
