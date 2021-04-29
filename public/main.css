@@ -34,7 +34,7 @@ body {
   display: flex;
   flex-direction: column;
   margin: 10vh 0 5vh 0;
-  overflow-y: auto;
+  overflow-y: scroll;
   overflow-x: hidden;
 }
 

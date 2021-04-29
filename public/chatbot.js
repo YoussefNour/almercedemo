@@ -33,6 +33,9 @@ const receivemessage = () => {
     texts.innerHTML += inputmessage(input);
     scrollToBottom("chat");
     sendmessage(texts, questionIndex);
+    temp = questionIndex-1;
+    msg = document.getElementById("respmsg"+temp);
+    msg.scrollIntoView(true);
     document.getElementById("message").value = "";
     //console.log(answers);
     //console.log(questionIndex);
@@ -68,7 +71,7 @@ const receivemessage = () => {
 };
 
 const outputmessage = () => {
-  return `<div class="outputmessage">
+  return `<div class="outputmessage" id="respmsg${questionIndex}">
         <img class="messageprofile" src="/images/robot.jpg">
         <label class="messagetext">${questions[questionIndex++]}</label>
     </div>`;
