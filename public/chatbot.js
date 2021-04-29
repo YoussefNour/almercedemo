@@ -13,6 +13,7 @@ const questions = [
   "شكرا لوقتك انتهت الأسألة",
 ];
 
+
 const sendmessage = () => {
   let texts = document.getElementById("chat");
   if (questionIndex < questions.length) {
