@@ -13,7 +13,6 @@ const questions = [
   "شكرا لوقتك انتهت الأسألة",
 ];
 
-
 const sendmessage = () => {
   let texts = document.getElementById("chat");
   if (questionIndex < questions.length) {
@@ -35,12 +34,12 @@ const receivemessage = () => {
     scrollToBottom("chat");
     sendmessage(texts, questionIndex);
     document.getElementById("message").value = "";
-    console.log(answers);
-    console.log(questionIndex);
-    console.log(questions.length);
+    //console.log(answers);
+    //console.log(questionIndex);
+    //console.log(questions.length);
   }
   if (questionIndex === questions.length) {
-    console.log("sending data");
+    //console.log("sending data");
     $.ajax({
       type: "POST",
       //url: "http://localhost:3000/addAnswer",
@@ -54,6 +53,7 @@ const receivemessage = () => {
         montesory: answers[5],
         material: answers[6],
         price: answers[7],
+        description : answers[8]
       },
       success: (res) => {
         if (res.pass) {

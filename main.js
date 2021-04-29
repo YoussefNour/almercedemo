@@ -12,7 +12,7 @@ app.use(express.static("public"));
 
 app.post("/addAnswer", (req, res) => {
   //answerOperation.addAnswer(req.body, res);
-  console.log(req.body)
+  //console.log(req.body);
   answerOperations.sendData(req.body);
   return res.send({pass:true}); 
 });
