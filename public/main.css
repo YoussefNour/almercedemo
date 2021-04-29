@@ -36,6 +36,7 @@ body {
   margin: 10vh 0 5vh 0;
   overflow-y: scroll;
   overflow-x: hidden;
+  padding-bottom: 4%;
 }
 
 .controls {

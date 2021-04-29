@@ -35,7 +35,7 @@ const receivemessage = () => {
     sendmessage(texts, questionIndex);
     temp = questionIndex-1;
     msg = document.getElementById("respmsg"+temp);
-    msg.scrollIntoView(true);
+    msg.scrollIntoView(false);
     document.getElementById("message").value = "";
     //console.log(answers);
     //console.log(questionIndex);
